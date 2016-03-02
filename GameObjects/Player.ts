@@ -33,7 +33,7 @@ module GameFromScratch {
         }
         
         MoveRight() {
-            if (this.playerState != PlayerState.IDLE) {
+            if (this.playerState == PlayerState.IDLE) {
                 this.StartWalking();
             } else {
                 if (this.walkingSpeed < Player.MAX_SPEED) {

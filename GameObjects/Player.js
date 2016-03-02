@@ -26,7 +26,7 @@ var GameFromScratch;
             this.StartIdle();
         }
         Player.prototype.MoveRight = function () {
-            if (this.playerState != PlayerState.IDLE) {
+            if (this.playerState == PlayerState.IDLE) {
                 this.StartWalking();
             }
             else {
