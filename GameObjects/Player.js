@@ -25,6 +25,11 @@ var GameFromScratch;
             this.anchor.set(0.0, 1.0);
             this.StartIdle();
         }
+        Player.prototype.update = function () {
+            if (this.playerState == PlayerState.WALKING) {
+                this.x += (this.walkingSpeed / Player.MAX_SPEED) * (60 / this.game.time.elapsed);
+            }
+        };
         Player.prototype.MoveRight = function () {
             if (this.playerState == PlayerState.IDLE) {
                 this.StartWalking();

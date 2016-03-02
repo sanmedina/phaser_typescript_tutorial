@@ -32,6 +32,12 @@ module GameFromScratch {
             this.StartIdle();
         }
         
+        update() {
+            if (this.playerState == PlayerState.WALKING) {
+                this.x += (this.walkingSpeed / Player.MAX_SPEED) * (60 / this.game.time.elapsed);
+            }
+        }
+        
         MoveRight() {
             if (this.playerState == PlayerState.IDLE) {
                 this.StartWalking();
