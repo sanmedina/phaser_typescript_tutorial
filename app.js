@@ -12,24 +12,21 @@ var Game;
             this.game.load.image("title", "Graphics/TitleScreen.png");
             this.game.load.image("scene", "Graphics/scene720p.png");
             this.game.load.image("gameover", "Graphics/GameOver.png");
-
             // Spritesheets
             this.game.load.atlasXML("HERO_WALKING", "Graphics/Hero_Walking.xml");
             this.game.load.atlasXML("HERO_IDLE", "Graphics/Hero_Idle.xml");
-
             // Audio
             this.game.load.audio("TitleSong", ["Sounds/TitleSong.mp3", "Sounds/TitleSong.ogg", "Sounds/TitleSong.wav"]);
         };
-
         ExtremeWalkingSimulator.prototype.create = function () {
             this.game.state.add("titleScreenstate", GameFromScratch.titleScreenState, true);
             this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
         };
         return ExtremeWalkingSimulator;
-    })();
+    }());
     Game.ExtremeWalkingSimulator = ExtremeWalkingSimulator;
 })(Game || (Game = {}));
-
 window.onload = function () {
     var game = new Game.ExtremeWalkingSimulator();
 };
+//# sourceMappingURL=app.js.map
