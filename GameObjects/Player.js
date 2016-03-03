@@ -1,7 +1,8 @@
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    __.prototype = b.prototype;
+    d.prototype = new __();
 };
 var GameFromScratch;
 (function (GameFromScratch) {
@@ -69,7 +70,7 @@ var GameFromScratch;
         Player.prototype.GameOver = function () { };
         Player.MAX_SPEED = 30;
         return Player;
-    }(Phaser.Sprite));
+    })(Phaser.Sprite);
     GameFromScratch.Player = Player;
 })(GameFromScratch || (GameFromScratch = {}));
 //# sourceMappingURL=Player.js.map

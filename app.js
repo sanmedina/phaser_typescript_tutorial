@@ -24,7 +24,7 @@ var Game;
             this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
         };
         return ExtremeWalkingSimulator;
-    }());
+    })();
     Game.ExtremeWalkingSimulator = ExtremeWalkingSimulator;
 })(Game || (Game = {}));
 window.onload = function () {

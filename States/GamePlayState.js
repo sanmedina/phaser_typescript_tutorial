@@ -1,7 +1,8 @@
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    __.prototype = b.prototype;
+    d.prototype = new __();
 };
 var GameFromScratch;
 (function (GameFromScratch) {
@@ -11,11 +12,15 @@ var GameFromScratch;
             _super.apply(this, arguments);
         }
         GamePlayState.prototype.create = function () {
+            this.myScene = new GameFromScratch.MyScene(this.game, 0, 0);
             this.player = new GameFromScratch.Player(this.game, 0, this.game.height - 50);
+            this.game.add.existing(this.myScene);
             this.game.add.existing(this.player);
+            this.game.world.setBounds(0, 0, this.myScene.width * 2, this.myScene.height);
+            this.game.camera.follow(this.player);
         };
         return GamePlayState;
-    }(Phaser.State));
+    })(Phaser.State);
     GameFromScratch.GamePlayState = GamePlayState;
 })(GameFromScratch || (GameFromScratch = {}));
 //# sourceMappingURL=GamePlayState.js.map
