@@ -24,6 +24,7 @@ module Game {
         create() {
             this.game.state.add("titleScreenstate", GameFromScratch.titleScreenState, true);
             this.game.state.add("GamePlayState", GameFromScratch.GamePlayState, false);
+            this.game.state.add("GameOverState", GameFromScratch.GameOverState, false);
             this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
         }
     }

@@ -81,6 +81,8 @@ module GameFromScratch {
             this.animations.play("Idle", 15, true);
         }
         
-        GameOver() {}
+        GameOver() {
+            this.game.state.start("GameOverState");
+        }
     } 
 }

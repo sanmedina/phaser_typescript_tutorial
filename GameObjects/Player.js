@@ -71,7 +71,9 @@ var GameFromScratch;
             this.animations.add("Idle");
             this.animations.play("Idle", 15, true);
         };
-        Player.prototype.GameOver = function () { };
+        Player.prototype.GameOver = function () {
+            this.game.state.start("GameOverState");
+        };
         Player.MAX_SPEED = 30;
         return Player;
     })(Phaser.Sprite);
