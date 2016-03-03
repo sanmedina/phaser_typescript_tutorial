@@ -35,6 +35,11 @@ module GameFromScratch {
         update() {
             if (this.playerState == PlayerState.WALKING) {
                 this.x += (this.walkingSpeed / Player.MAX_SPEED) * (60 / this.game.time.elapsed);
+                
+                var stageWidth = this.game.stage.getChildAt(0).getBounds().width;
+                if (this.x > stageWidth * .75) {
+                    this.x = stageWidth * .25;
+                }
             }
         }
         
